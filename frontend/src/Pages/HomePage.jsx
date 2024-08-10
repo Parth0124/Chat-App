@@ -1,4 +1,6 @@
-import { Box, Container, Text } from "@chakra-ui/react";
+import { Box, Container, Text, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import Login from "../components/Authentication/Login";
+import Signup from "../components/Authentication/Signup";
 
 function HomePage() {
   return (
@@ -13,10 +15,25 @@ function HomePage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize='4xl' fontFamily="Work sans" color='black'>Talk-A-Tive</Text>
+        <Text fontSize="4xl" fontFamily="Work sans" color="black">
+          Talk-A-Tive
+        </Text>
       </Box>
-      <Box>
-
+      <Box bg="white" w="100%" p={4} borderRadius="1g" color='black' borderWidth="1px">
+        <Tabs variant="soft-rounded">
+          <TabList mb='1em'>
+            <Tab width='50%'>Login</Tab>
+            <Tab width='50%'>SignUp</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel>
+              {<Login/>}
+            </TabPanel>
+            <TabPanel>
+              {<Signup/>}
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </Box>
     </Container>
   );
