@@ -20,8 +20,8 @@ function Homepage() {
     const user = JSON.parse(localStorage.getItem("userInfo"));
 
     if (user) {
-      history.push("/");
-      history.replace(process.env.PORT + "/chats");
+      history.push('/');
+      history.replace(process.env.PORT+'/chats');
     }
   }, [history]);
 

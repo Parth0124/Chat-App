@@ -28,7 +28,7 @@ const Signup = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       setPicLoading(false);
       return;
@@ -39,7 +39,7 @@ const Signup = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       return;
     }
@@ -66,11 +66,12 @@ const Signup = () => {
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setPicLoading(false);
       history.push("/chats");
+      window.location.reload()
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -78,7 +79,7 @@ const Signup = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       setPicLoading(false);
     }
@@ -92,22 +93,17 @@ const Signup = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       return;
     }
     console.log(pics);
-    if (
-      pics.type === "image/jpeg" ||
-      pics.type === "image/png" ||
-      pics.type === "image/jpg" ||
-      pics.type === "image/avif"
-    ) {
+    if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "chat-app");
-      data.append("cloud_name", "dl1pxnjmu");
-      fetch("https://api.cloudinary.com/v1_1/dl1pxnjmu/image/upload", {
+      data.append("upload_preset", "chat app");
+      data.append("cloud_name", "delk79xip");
+      fetch("https://api.cloudinary.com/v1_1/delk79xip/image/upload", {
         method: "post",
         body: data,
       })
@@ -127,7 +123,7 @@ const Signup = () => {
         status: "warning",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       setPicLoading(false);
       return;

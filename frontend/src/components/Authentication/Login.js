@@ -31,6 +31,7 @@ const Login = () => {
       return;
     }
 
+    // console.log(email, password);
     try {
       const config = {
         headers: {
@@ -44,16 +45,19 @@ const Login = () => {
         config
       );
 
+      // console.log(JSON.stringify(data));
       toast({
         title: "Login Successful",
         status: "success",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/chats");
+      history.push('/chats');
+      window.location.reload()
+      
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -61,7 +65,7 @@ const Login = () => {
         status: "error",
         duration: 5000,
         isClosable: true,
-        position: "top",
+        position: "bottom",
       });
       setLoading(false);
     }
