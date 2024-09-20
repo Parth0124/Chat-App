@@ -9,6 +9,8 @@ dotenv.config();
 
 connectDB();
 
+app.use(express.json())
+
 app.get("/", (req, res) => {
   res.send("Api is working!");
 });
