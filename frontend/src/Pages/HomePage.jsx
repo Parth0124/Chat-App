@@ -1,12 +1,34 @@
-import { Box, Container, Text, Tabs, TabList, Tab, TabPanels, TabPanel } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from "@chakra-ui/react";
+import { useEffect } from "react";
+import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
 
-function HomePage() {
+function Homepage() {
+  const history = useHistory();
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+
+    if (user) {
+      history.push("/");
+      history.replace(process.env.PORT + "/chats");
+    }
+  }, [history]);
+
   return (
     <Container maxW="xl" centerContent>
       <Box
-        display="flex"
+        d="flex"
         justifyContent="center"
         p={3}
         bg="white"
@@ -15,22 +37,22 @@ function HomePage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans" color="black">
+        <Text fontSize="4xl" fontFamily="Work sans">
           Talk-A-Tive
         </Text>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="1g" color='black' borderWidth="1px">
-        <Tabs variant="soft-rounded">
-          <TabList mb='1em'>
-            <Tab width='50%'>Login</Tab>
-            <Tab width='50%'>SignUp</Tab>
+      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+        <Tabs isFitted variant="soft-rounded">
+          <TabList mb="1em">
+            <Tab>Login</Tab>
+            <Tab>Sign Up</Tab>
           </TabList>
           <TabPanels>
             <TabPanel>
-              {<Login/>}
+              <Login />
             </TabPanel>
             <TabPanel>
-              {<Signup/>}
+              <Signup />
             </TabPanel>
           </TabPanels>
         </Tabs>
@@ -39,4 +61,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default Homepage;
