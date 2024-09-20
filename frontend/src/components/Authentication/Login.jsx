@@ -63,7 +63,7 @@ function Login() {
           setEmail("guest@example.com");
           setPassword("123456");
         }}
-      >about:blank#blocked
+      >
         Get Guest User Credentials
       </Button>
     </VStack>
