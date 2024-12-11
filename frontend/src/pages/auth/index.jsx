@@ -156,7 +156,7 @@ export default function Auth() {
 
   return (
     <div className='relative h-[100vh] w-[100vw] overflow-hidden flex items-center justify-center bg-slate-900'>
-    <div className='relative z-10 h-[80vh] bg-gray-600 border-2 border-white text-opacity-90 shadow-2xl w-[90vw] md:w-[90vw] lg:w-[70vw] xl:w-[60vw] rounded-3xl grid xl:grid-cols-2'>
+    <div className='relative z-10 h-[80vh] bg-gray-500 border-2 border-white text-opacity-90 shadow-2xl w-[90vw] md:w-[90vw] lg:w-[70vw] xl:w-[60vw] rounded-3xl grid xl:grid-cols-2'>
     <div className='flex flex-col gap-10 items-center justify-center '>
              <div className='flex items-center justify-center flex-col'>
                 <div className='flex items-center justify-center'>
