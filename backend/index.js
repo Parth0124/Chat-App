@@ -20,12 +20,7 @@ const _dirname = path.resolve();
 
 
 // Implement Cors: 
-const corsOptions = {
-    origin: [process.env.ORIGIN],
-    methods:["GET","POST","PUT","PATCH","DELETE"],
-    credentials:true,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use("/uploads/files", express.static("uploads/files"));
