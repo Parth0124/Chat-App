@@ -20,7 +20,13 @@ const _dirname = path.resolve();
 
 
 // Implement Cors: 
-app.use(cors());
+const corsOptions = {
+  origin: "https://chat-app-gamma-eight-68.vercel.app", // Allow your frontend origin explicitly
+  credentials: true, // Allow cookies and other credentials to be sent
+};
+
+// Apply the CORS middleware with the options
+app.use(cors(corsOptions));
 
 app.use("/uploads/profiles", express.static("uploads/profiles"));
 app.use("/uploads/files", express.static("uploads/files"));
