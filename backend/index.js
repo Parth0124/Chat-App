@@ -21,7 +21,7 @@ const _dirname = path.resolve();
 
 // Implement Cors: 
 const corsOptions = {
-  origin: 'https://chat-app-gamma-eight-68.vercel.app', // Allow your frontend origin explicitly
+  origin: 'http://localhost:5173', // Allow your frontend origin explicitly
   credentials: true, // Allow cookies and other credentials to be sent
 };
 
