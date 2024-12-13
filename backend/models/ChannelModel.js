@@ -15,8 +15,8 @@ const ChannelSchema = new mongoose.Schema({
     ],
     admin: {
         type: mongoose.Schema.ObjectId,
-        ref:"Users",
         required: true,
+        ref:"Users",
     },
     messages: [
         {
