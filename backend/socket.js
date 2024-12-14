@@ -6,7 +6,7 @@ const setupSocket = (server) => {
   const io = new SocketIOServer(server, {
     cors: {
       origin:
-        process.env.ORIGIN || "https://chat-app-real-time-three.vercel.app/", // Default to localhost if ORIGIN is not set
+        process.env.ORIGIN || "http://localhost:5173", // Default to localhost if ORIGIN is not set
       methods: ["GET", "POST"],
       credentials: true, // Allow credentials (cookies, headers)
     },
