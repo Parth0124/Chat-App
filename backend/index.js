@@ -20,13 +20,14 @@ const MONGODB_URL = process.env.MONGODB_URL;
 // Resolve the current directory
 const _dirname = path.resolve();
 
-// Implement CORS
+/// Configure CORS
 const corsOptions = {
-  origin: "http://localhost:5173", // Allow your frontend origin explicitly
-  methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
-  credentials: true, // Allow cookies and other credentials
+  origin: process.env.ORIGIN || "http://localhost:5173",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
 };
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // Handle preflight
 
 // Middleware
 app.use("/uploads/profiles", express.static("uploads/profiles"));
