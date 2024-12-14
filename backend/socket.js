@@ -5,7 +5,7 @@ import Channel from "./models/ChannelModel.js";
 const setupSocket = (server) => {
   const io = new SocketIOServer(server, {
     cors: {
-      origin: process.env.ORIGIN || "http://localhost:5173", // Default to localhost if ORIGIN is not set
+      origin: process.env.ORIGIN || "http://chat-app-real-time.vecel.app", // Default to localhost if ORIGIN is not set
       methods: ["GET", "POST"],
       credentials: true, // Allow credentials (cookies, headers)
     },
