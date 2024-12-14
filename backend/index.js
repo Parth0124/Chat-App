@@ -22,7 +22,7 @@ const _dirname = path.resolve();
 
 // Implement CORS
 const corsOptions = {
-  origin: "https://chat-app-real-time.vecel.app", // Allow your frontend origin explicitly
+  origin: "https://chat-app-real-time-three.vercel.app/", // Allow your frontend origin explicitly
   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
   credentials: true, // Allow cookies and other credentials
 };
