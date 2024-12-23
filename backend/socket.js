@@ -8,7 +8,7 @@ dotenv.config()
 const setupSocket = (server) => {
   const io = new SocketIOServer(server, {
     cors: {
-      origin: "https://real-time-chat-app-project.vercel.app/",
+      origin: "https://real-time-chat-app-project.vercel.app",
       methods: ["GET", "POST"],
       credentials: true, // Allow credentials (cookies, headers)
     },

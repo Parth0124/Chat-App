@@ -23,7 +23,7 @@ const _dirname = path.resolve();
 
 /// Configure CORS
 const corsOptions = {
-  origin:  "https://real-time-chat-app-project.vercel.app/",
+  origin:  "https://real-time-chat-app-project.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };
@@ -43,13 +43,9 @@ app.use("/api/contacts", contactRoutes);
 app.use("/api/messages", messagesRoute);
 app.use("/api/channel", ChannelRoutes);
 
-// Get the current directory
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// Serve Frontend
-app.use(express.static(path.join(__dirname, "frontend", "dist")));
+app.use(express.static(path.join(_dirname, "/frontend/dist")));
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  res.sendFile(path.resolve(_dirname, "frontend", "dist", "index.html"));
 });
 
 // Health Check
