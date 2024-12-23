@@ -17,12 +17,16 @@ const app = express();
 const port = process.env.PORT || 4000;
 const MONGODB_URL = process.env.MONGODB_URL;
 
+
 // Resolve the current directory
 const _dirname = path.resolve();
 
 /// Configure CORS
 const corsOptions = {
-  origin: process.env.ORIGIN || "http://localhost:5173",
+  origin:
+    process.env.ORIGIN ||
+    "http://localhost:5173" ||
+    "https://chat-app-real-time-project.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };

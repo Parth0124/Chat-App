@@ -1,12 +1,15 @@
 import { Server as SocketIOServer } from "socket.io";
 import Message from "./models/MessagesModel.js";
 import Channel from "./models/ChannelModel.js";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const setupSocket = (server) => {
   const io = new SocketIOServer(server, {
     cors: {
       origin:
-        process.env.ORIGIN || "http://localhost:5173", // Default to localhost if ORIGIN is not set
+        process.env.ORIGIN || "http://localhost:5173" || "https://chat-app-real-time-project.vercel.app", // Default to localhost if ORIGIN is not set
       methods: ["GET", "POST"],
       credentials: true, // Allow credentials (cookies, headers)
     },
