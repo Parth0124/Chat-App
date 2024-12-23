@@ -23,7 +23,7 @@ const _dirname = path.resolve();
 
 /// Configure CORS
 const corsOptions = {
-  origin:  "https://real-time-chat-app-project.vercel.app",
+  origin:  "https://real-time-chat-app-project.vercel.app/",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 };
